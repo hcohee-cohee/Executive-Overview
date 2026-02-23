@@ -1677,7 +1677,10 @@ main{padding:52px 64px 0;}
 .fb-link-col.fb-d2 .fb-link-head{background:rgba(167,139,250,.08);color:var(--fb-d2);}
 .fb-link-head{padding:14px 20px;font-size:13px;font-weight:600;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
 .fb-link-count{font-family:'DM Mono',monospace;font-size:10px;font-weight:400;color:var(--muted);}
-.fb-link-item{display:flex;align-items:center;justify-content:space-between;padding:10px 20px;border-bottom:1px solid var(--border);gap:12px;}
+.fb-link-item{display:flex;align-items:center;justify-content:space-between;padding:10px 20px;border-bottom:1px solid var(--border);gap:12px;cursor:pointer;transition:background .15s;}
+.fb-link-item:hover{background:rgba(255,255,255,.04);}
+.fb-link-item a{text-decoration:none;color:inherit;display:block;}
+.fb-link-item a:hover .fb-link-name{text-decoration:underline;text-underline-offset:2px;}
 .fb-link-item:last-child{border:none;}
 .fb-link-url{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px;}
 .fb-link-name{font-size:12px;font-weight:600;margin-bottom:1px;color:var(--text);}
@@ -2869,99 +2872,100 @@ main{padding:52px 64px 0;}
     <div class="sec-label">Email link audit — where clicks went (and didn't)</div>
     <div class="fb-link-grid">
       <div class="fb-link-col fb-d1">
+       <div class="fb-link-col fb-d1">
         <div class="fb-link-head">Day 1 post-event email <span class="fb-link-count">5 links · 3 got clicks</span></div>
         <div class="fb-link-item fb-active">
-          <div>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSce_placeholder/viewform" target="_blank" rel="noopener">
             <div class="fb-link-name">📋 Feedback Survey</div>
             <div class="fb-link-url">docs.google.com/forms/d/e/1FAIpQLSce…</div>
-          </div>
+          </a>
           <div style="text-align:right">
             <div class="fb-link-clicks" style="color:var(--fb-d1)">97</div>
             <div style="font-family:'Syne Mono',monospace;font-size:10px;color:var(--muted)">unique</div>
           </div>
         </div>
         <div class="fb-link-item fb-active">
-          <div>
+          <a href="https://netflix.plusplus.app/event-types/363fec7b" target="_blank" rel="noopener">
             <div class="fb-link-name">📅 PlusPlus Event Page</div>
             <div class="fb-link-url">netflix.plusplus.app/event-types/363fec7b…</div>
-          </div>
+          </a>
           <div style="text-align:right">
             <div class="fb-link-clicks" style="color:var(--fb-d1)">15</div>
             <div style="font-family:'Syne Mono',monospace;font-size:10px;color:var(--muted)">unique</div>
           </div>
         </div>
         <div class="fb-link-item fb-active">
-          <div>
+          <a href="https://learn.netflix.net/learn/course/1583" target="_blank" rel="noopener">
             <div class="fb-link-name">📖 Pitch to Play Course</div>
             <div class="fb-link-url">learn.netflix.net/learn/course/1583/pitch…</div>
-          </div>
+          </a>
           <div style="text-align:right">
             <div class="fb-link-clicks" style="color:var(--fb-d1)">4</div>
             <div style="font-family:'Syne Mono',monospace;font-size:10px;color:var(--muted)">unique</div>
           </div>
         </div>
         <div class="fb-link-item fb-zero">
-          <div>
+          <a href="https://sites.google.com/d/1HsycyORLFbGI" target="_blank" rel="noopener">
             <div class="fb-link-name">Google Drive Resources</div>
             <div class="fb-link-url">sites.google.com/d/1HsycyORLFbGI…</div>
-          </div>
+          </a>
           <div class="fb-link-clicks">0</div>
         </div>
         <div class="fb-link-item fb-zero">
-          <div>
+          <a href="https://netflix.com" target="_blank" rel="noopener">
             <div class="fb-link-name">Netflix.com</div>
             <div class="fb-link-url">netflix.com</div>
-          </div>
+          </a>
           <div class="fb-link-clicks">0</div>
         </div>
       </div>
       <div class="fb-link-col fb-d2">
         <div class="fb-link-head" style="background:rgba(167,139,250,.1);color:var(--fb-d2);">Day 2 post-event email <span class="fb-link-count">17 links · 4 got clicks · 13 got zero</span></div>
-        <div class="fb-link-item fb-active fb-d2c">
-          <div>
+    <div class="fb-link-item fb-active fb-d2c">
+          <a href="https://forms.gle/BXcKgagirzCdTiad9" target="_blank" rel="noopener">
             <div class="fb-link-name">📋 Feedback Survey</div>
             <div class="fb-link-url">forms.gle/BXcKgagirzCdTiad9</div>
-          </div>
+          </a>
           <div style="text-align:right">
             <div class="fb-link-clicks" style="color:var(--fb-d2)">14</div>
             <div style="font-family:'Syne Mono',monospace;font-size:10px;color:var(--muted)">unique</div>
           </div>
         </div>
         <div class="fb-link-item fb-active fb-d2c">
-          <div>
+          <a href="https://learn.netflix.net/pages/210/leadership-excellence" target="_blank" rel="noopener">
             <div class="fb-link-name">📖 Leadership Excellence</div>
             <div class="fb-link-url">learn.netflix.net/pages/210/leadership-exc…</div>
-          </div>
+          </a>
           <div style="text-align:right">
             <div class="fb-link-clicks" style="color:var(--fb-d2)">2</div>
             <div style="font-family:'Syne Mono',monospace;font-size:10px;color:var(--muted)">unique</div>
           </div>
         </div>
         <div class="fb-link-item fb-active fb-d2c">
-          <div>
+          <a href="https://netflix.plusplus.app/event-types/363fec7b" target="_blank" rel="noopener">
             <div class="fb-link-name">📅 Feedback Workshops</div>
             <div class="fb-link-url">netflix.plusplus.app/event-types/363fec7b…</div>
-          </div>
+          </a>
           <div style="text-align:right">
             <div class="fb-link-clicks" style="color:var(--fb-d2)">1</div>
             <div style="font-family:'Syne Mono',monospace;font-size:10px;color:var(--muted)">unique</div>
           </div>
         </div>
         <div class="fb-link-item fb-active fb-d2c">
-          <div>
+          <a href="https://learn.netflix.net/pages/217/team-effectiveness" target="_blank" rel="noopener">
             <div class="fb-link-name">📖 Dream Team Effectiveness</div>
-            <div class="fb-link-url">learn.netflix.net/pages/217/team-effective…</div>
-          </div>
+            <div class="fb-link-url">learn.netflix.net/pages/217/team-ef…</div>
+          </a>
           <div style="text-align:right">
             <div class="fb-link-clicks" style="color:var(--fb-d2)">1</div>
             <div style="font-family:'Syne Mono',monospace;font-size:10px;color:var(--muted)">unique</div>
           </div>
         </div>
         <div class="fb-link-item fb-active fb-d2c">
-          <div>
+          <a href="https://www.youtube.com/watch?v=cYMcvYPMzqk" target="_blank" rel="noopener">
             <div class="fb-link-name">▶ YouTube (Lencioni)</div>
             <div class="fb-link-url">youtube.com/watch?v=cYMcvYPMzqk</div>
-          </div>
+          </a>
           <div style="text-align:right">
             <div class="fb-link-clicks" style="color:var(--fb-d2)">1</div>
             <div style="font-family:'Syne Mono',monospace;font-size:10px;color:var(--muted)">unique</div>
