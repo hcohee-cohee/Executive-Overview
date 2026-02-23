@@ -1362,43 +1362,22 @@ main{padding:52px 64px 0;}
   letter-spacing:4px;
   text-transform:uppercase;
 }
-.fb-ccard{
-  background:var(--card2);
-  border:1px solid var(--border);
-  padding:28px 32px;
-}
+.fb-ccard{background:var(--card2);border:1px solid var(--border);padding:28px 32px;}
 .fb-ccard.fb-d1{border-top:3px solid var(--fb-d1);}
 .fb-ccard.fb-d2{border-top:3px solid var(--fb-d2);}
-.fb-ccard-day{
-  font-family:'Syne Mono',monospace;
-  font-size:10px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  margin-bottom:20px;
-}
+.fb-ccard-day{font-family:'Syne Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid var(--border);}
 .fb-ccard.fb-d1 .fb-ccard-day{color:var(--fb-d1);}
 .fb-ccard.fb-d2 .fb-ccard-day{color:var(--fb-d2);}
-.fb-ccard-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:baseline;
-  padding:10px 0;
-  border-bottom:1px solid rgba(0,0,0,.05);
-  gap:12px;
-}
-.fb-ccard-row:last-child{border:none;}
-.fb-ccard-metric{
-  font-size:13px;
-  color:var(--muted);
-}
-.fb-ccard-val{
-  font-family:'Syne',sans-serif;
-  font-weight:700;
-  font-size:18px;
-}
+.fb-ccard-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.fb-ccard-row{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);padding:16px 18px;display:flex;flex-direction:column;gap:6px;}
+.fb-ccard-row.loss{background:rgba(220,38,38,.07);border-color:rgba(220,38,38,.15);}
+.fb-ccard-row.win{background:rgba(21,128,61,.07);border-color:rgba(21,128,61,.15);}
+.fb-ccard-row.warn{background:rgba(245,166,35,.06);border-color:rgba(245,166,35,.15);}
+.fb-ccard-metric{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);line-height:1.3;}
+.fb-ccard-val{font-family:'Bebas Neue',sans-serif;font-size:38px;line-height:1;color:var(--text);}
 .fb-ccard.fb-d1 .highlight{color:var(--fb-d1);}
 .fb-ccard.fb-d2 .highlight{color:var(--fb-d2);}
-.fb-ccard-sub{
+.fb-ccard-sub{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);line-height:1.4;}
   font-family:'Syne Mono',monospace;
   font-size:10px;
   color:var(--muted);
@@ -2699,67 +2678,80 @@ main{padding:52px 64px 0;}
   </div>
   <div class="fb-inner">
 
-
   <!-- COMPARE CARDS -->
   <div class="sec">
     <div class="sec-label">At a glance — by the numbers</div>
     <div class="fb-compare-grid">
 
-      <div class="fb-fb-ccard fb-d1">
-        <div class="fb-fb-ccard-day">Day 1 — Hollywood Palladium</div>
-        <div class="fb-fb-ccard-row">
-          <div class="fb-fb-ccard-metric">Attended</div>
-          <div><div class="fb-fb-ccard-val">465</div></div>
-        </div>
-        <div class="fb-fb-ccard-row">
-          <div class="fb-fb-ccard-metric">Post-event email: opened</div>
-          <div><div class="fb-fb-ccard-val">418</div><div class="fb-fb-ccard-sub">81.8% open rate</div></div>
-        </div>
-        <div class="fb-fb-ccard-row">
-          <div class="fb-fb-ccard-metric">Survey link clicked</div>
-          <div><div class="fb-fb-ccard-val">97</div><div class="fb-fb-ccard-sub">23.2% of openers</div></div>
-        </div>
-        <div class="fb-fb-ccard-row">
-          <div class="fb-fb-ccard-metric">Started, didn't finish</div>
-          <div><div class="fb-fb-ccard-val highlight" style="color:var(--fb-loss)">−29</div><div class="fb-fb-ccard-sub">30% abandonment</div></div>
-        </div>
-        <div class="fb-fb-ccard-row">
-          <div class="fb-fb-ccard-metric">Completed survey</div>
-          <div><div class="fb-fb-ccard-val highlight">68</div><div class="fb-fb-ccard-sub">14.6% of attended</div></div>
-        </div>
-        <div class="fb-fb-ccard-row">
-          <div class="fb-fb-ccard-metric">Links in post-event email</div>
-          <div><div class="fb-fb-ccard-val">5</div><div class="fb-fb-ccard-sub">2 got zero clicks</div></div>
+      <div class="fb-ccard fb-d1">
+        <div class="fb-ccard-day">Day 1 — Hollywood Palladium</div>
+        <div class="fb-ccard-grid">
+          <div class="fb-ccard-row">
+            <div class="fb-ccard-metric">Attended</div>
+            <div class="fb-ccard-val">465</div>
+          </div>
+          <div class="fb-ccard-row">
+            <div class="fb-ccard-metric">Email opened</div>
+            <div class="fb-ccard-val">418</div>
+            <div class="fb-ccard-sub">81.8% open rate</div>
+          </div>
+          <div class="fb-ccard-row">
+            <div class="fb-ccard-metric">Survey clicked</div>
+            <div class="fb-ccard-val">97</div>
+            <div class="fb-ccard-sub">23.2% of openers</div>
+          </div>
+          <div class="fb-ccard-row loss">
+            <div class="fb-ccard-metric">Started, didn't finish</div>
+            <div class="fb-ccard-val" style="color:var(--fb-loss)">−29</div>
+            <div class="fb-ccard-sub">30% abandonment</div>
+          </div>
+          <div class="fb-ccard-row win">
+            <div class="fb-ccard-metric">Completed survey</div>
+            <div class="fb-ccard-val highlight">68</div>
+            <div class="fb-ccard-sub">14.6% of attended</div>
+          </div>
+          <div class="fb-ccard-row">
+            <div class="fb-ccard-metric">Links in email</div>
+            <div class="fb-ccard-val">5</div>
+            <div class="fb-ccard-sub">2 got zero clicks</div>
+          </div>
         </div>
       </div>
 
       <div class="fb-compare-mid">vs</div>
 
-      <div class="fb-fb-ccard fb-d2">
-        <div class="fb-fb-ccard-day">Day 2 — Cue Commons</div>
-        <div class="fb-fb-ccard-row">
-          <div class="fb-fb-ccard-metric">Attended</div>
-          <div><div class="fb-fb-ccard-val">75</div></div>
-        </div>
-        <div class="fb-fb-ccard-row">
-          <div class="fb-fb-ccard-metric">Post-event email: opened</div>
-          <div><div class="fb-fb-ccard-val">—</div><div class="fb-fb-ccard-sub">No open data in screenshots</div></div>
-        </div>
-        <div class="fb-fb-ccard-row">
-          <div class="fb-fb-ccard-metric">Survey link clicked (email)</div>
-          <div><div class="fb-fb-ccard-val">14</div><div class="fb-fb-ccard-sub">18.7% of attended</div></div>
-        </div>
-        <div class="fb-fb-ccard-row">
-          <div class="fb-fb-ccard-metric">Completed via other path</div>
-          <div><div class="fb-fb-ccard-val highlight" style="color:var(--fb-win)">+16</div><div class="fb-fb-ccard-sub">QR code or in-room share</div></div>
-        </div>
-        <div class="fb-fb-ccard-row">
-          <div class="fb-fb-ccard-metric">Completed survey</div>
-          <div><div class="fb-fb-ccard-val highlight">30</div><div class="fb-fb-ccard-sub">40.0% of attended</div></div>
-        </div>
-        <div class="fb-fb-ccard-row">
-          <div class="fb-fb-ccard-metric">Links in post-event email</div>
-          <div><div class="fb-fb-ccard-val" style="color:var(--fb-warn)">17</div><div class="fb-fb-ccard-sub">13 got zero clicks</div></div>
+      <div class="fb-ccard fb-d2">
+        <div class="fb-ccard-day">Day 2 — Cue Commons</div>
+        <div class="fb-ccard-grid">
+          <div class="fb-ccard-row">
+            <div class="fb-ccard-metric">Attended</div>
+            <div class="fb-ccard-val">75</div>
+          </div>
+          <div class="fb-ccard-row">
+            <div class="fb-ccard-metric">Email opened</div>
+            <div class="fb-ccard-val">—</div>
+            <div class="fb-ccard-sub">No open data in screenshots</div>
+          </div>
+          <div class="fb-ccard-row">
+            <div class="fb-ccard-metric">Survey clicked (email)</div>
+            <div class="fb-ccard-val">14</div>
+            <div class="fb-ccard-sub">18.7% of attended</div>
+          </div>
+          <div class="fb-ccard-row win">
+            <div class="fb-ccard-metric">Completed via other path</div>
+            <div class="fb-ccard-val" style="color:var(--fb-win)">+16</div>
+            <div class="fb-ccard-sub">QR code or in-room share</div>
+          </div>
+          <div class="fb-ccard-row win">
+            <div class="fb-ccard-metric">Completed survey</div>
+            <div class="fb-ccard-val highlight">30</div>
+            <div class="fb-ccard-sub">40.0% of attended</div>
+          </div>
+          <div class="fb-ccard-row warn">
+            <div class="fb-ccard-metric">Links in email</div>
+            <div class="fb-ccard-val" style="color:var(--fb-warn)">17</div>
+            <div class="fb-ccard-sub">13 got zero clicks</div>
+          </div>
         </div>
       </div>
 
@@ -2771,84 +2763,70 @@ main{padding:52px 64px 0;}
     <div class="sec-label">Drop-off by stage — where each day loses respondents</div>
     <div class="fb-funnel-compare">
 
-      <!-- D1 funnel -->
-      <div class="fb-fb-funnel-col fb-d1">
-        <div class="fb-fb-funnel-col-head">Day 1 <span>Email is the primary driver — and it leaks</span></div>
-
+      <div class="fb-funnel-col fb-d1">
+        <div class="fb-funnel-col-head">Day 1 <span>Email is the primary driver — and it leaks</span></div>
         <div class="fb-fstage">
-          <div class="fb-fb-fstage-label"><span>Attended</span><span class="fb-fb-fstage-pct">100%</span></div>
+          <div class="fb-fstage-label"><span>Attended</span><span class="fb-fstage-pct">100%</span></div>
           <div style="display:flex;justify-content:space-between;align-items:center;">
-            <div class="fb-fb-fstage-n" style="color:var(--fb-d1)">465</div>
+            <div class="fb-fstage-n" style="color:var(--fb-d1)">465</div>
           </div>
-          <div class="fb-fbar"><div class="fb-fb-fbar-fill" style="background:var(--fb-d1)" data-w="100"></div></div>
+          <div class="fb-fbar"><div class="fb-fbar-fill" style="background:var(--fb-d1)" data-w="100"></div></div>
         </div>
-
         <div class="fb-fstage" style="background:rgba(220,38,38,.12)">
-          <div class="fb-fb-fstage-label"><span style="color:var(--fb-loss)">↘ Didn't open email</span><span class="fb-drop-badge">−47</span></div>
+          <div class="fb-fstage-label"><span style="color:var(--fb-loss)">↘ Didn't open email</span><span class="fb-drop-badge">−47</span></div>
           <div style="font-size:11px;color:var(--muted);">10% of attended · email timing or fatigue</div>
         </div>
-
         <div class="fb-fstage">
-          <div class="fb-fb-fstage-label"><span>Opened the email</span><span class="fb-fb-fstage-pct">89.9%</span></div>
-          <div class="fb-fb-fstage-n" style="color:var(--fb-d1)">418</div>
-          <div class="fb-fbar"><div class="fb-fb-fbar-fill" style="background:var(--fb-d1);opacity:.75" data-w="89.9"></div></div>
+          <div class="fb-fstage-label"><span>Opened the email</span><span class="fb-fstage-pct">89.9%</span></div>
+          <div class="fb-fstage-n" style="color:var(--fb-d1)">418</div>
+          <div class="fb-fbar"><div class="fb-fbar-fill" style="background:var(--fb-d1);opacity:.75" data-w="89.9"></div></div>
         </div>
-
         <div class="fb-fstage" style="background:rgba(220,38,38,.12);border-left:3px solid var(--fb-loss);">
-          <div class="fb-fb-fstage-label"><span style="color:var(--fb-loss);font-weight:700;">↘ Opened but didn't click survey</span><span class="fb-drop-badge">−321</span></div>
+          <div class="fb-fstage-label"><span style="color:var(--fb-loss);font-weight:700;">↘ Opened but didn't click survey</span><span class="fb-drop-badge">−321</span></div>
           <div style="font-size:11px;color:var(--fb-loss);font-weight:600;">The biggest leak — 76.8% of openers</div>
           <div style="font-size:11px;color:var(--muted);margin-top:2px;">Survey not prominent enough · buried in 5-link email</div>
         </div>
-
         <div class="fb-fstage">
-          <div class="fb-fb-fstage-label"><span>Clicked survey link</span><span class="fb-fb-fstage-pct">20.9%</span></div>
-          <div class="fb-fb-fstage-n" style="color:var(--fb-d1)">97</div>
-          <div class="fb-fbar"><div class="fb-fb-fbar-fill" style="background:var(--fb-d1);opacity:.55" data-w="20.9"></div></div>
+          <div class="fb-fstage-label"><span>Clicked survey link</span><span class="fb-fstage-pct">20.9%</span></div>
+          <div class="fb-fstage-n" style="color:var(--fb-d1)">97</div>
+          <div class="fb-fbar"><div class="fb-fbar-fill" style="background:var(--fb-d1);opacity:.55" data-w="20.9"></div></div>
         </div>
-
         <div class="fb-fstage" style="background:rgba(194,65,12,.12)">
-          <div class="fb-fb-fstage-label"><span style="color:var(--fb-warn)">↘ Started survey, quit</span><span class="fb-warn-badge">−29</span></div>
+          <div class="fb-fstage-label"><span style="color:var(--fb-warn)">↘ Started survey, quit</span><span class="fb-warn-badge">−29</span></div>
           <div style="font-size:11px;color:var(--muted);">30% abandonment · survey is too long</div>
         </div>
-
-        <div class="fb-fb-fstage fb-terminal">
-          <div class="fb-fb-fstage-label"><span>Completed survey</span><span class="fb-fb-fstage-pct" style="color:var(--fb-win)">14.6%</span></div>
-          <div class="fb-fb-fstage-n" style="color:var(--fb-win)">68</div>
-          <div class="fb-fbar"><div class="fb-fb-fbar-fill" style="background:var(--fb-win)" data-w="14.6"></div></div>
+        <div class="fb-fstage fb-terminal">
+          <div class="fb-fstage-label"><span>Completed survey</span><span class="fb-fstage-pct" style="color:var(--fb-win)">14.6%</span></div>
+          <div class="fb-fstage-n" style="color:var(--fb-win)">68</div>
+          <div class="fb-fbar"><div class="fb-fbar-fill" style="background:var(--fb-win)" data-w="14.6"></div></div>
           <div style="font-size:11px;color:var(--muted);margin-top:6px;">Your current data source for all satisfaction scores</div>
         </div>
       </div>
 
-      <!-- D2 funnel -->
-      <div class="fb-fb-funnel-col fb-d2">
-        <div class="fb-fb-funnel-col-head">Day 2 <span>Email wasn't the main driver — and that's why it worked</span></div>
-
+      <div class="fb-funnel-col fb-d2">
+        <div class="fb-funnel-col-head">Day 2 <span>Email wasn't the main driver — and that's why it worked</span></div>
         <div class="fb-fstage">
-          <div class="fb-fb-fstage-label"><span>Attended</span><span class="fb-fb-fstage-pct">100%</span></div>
-          <div class="fb-fb-fstage-n" style="color:var(--fb-d2)">75</div>
-          <div class="fb-fbar"><div class="fb-fb-fbar-fill" style="background:var(--fb-d2)" data-w="100"></div></div>
+          <div class="fb-fstage-label"><span>Attended</span><span class="fb-fstage-pct">100%</span></div>
+          <div class="fb-fstage-n" style="color:var(--fb-d2)">75</div>
+          <div class="fb-fbar"><div class="fb-fbar-fill" style="background:var(--fb-d2)" data-w="100"></div></div>
         </div>
-
         <div class="fb-fstage">
-          <div class="fb-fb-fstage-label"><span>Clicked survey (email link)</span><span class="fb-fb-fstage-pct">18.7%</span></div>
-          <div class="fb-fb-fstage-n" style="color:var(--fb-d2)">14</div>
-          <div class="fb-fbar"><div class="fb-fb-fbar-fill" style="background:var(--fb-d2);opacity:.6" data-w="18.7"></div></div>
+          <div class="fb-fstage-label"><span>Clicked survey (email link)</span><span class="fb-fstage-pct">18.7%</span></div>
+          <div class="fb-fstage-n" style="color:var(--fb-d2)">14</div>
+          <div class="fb-fbar"><div class="fb-fbar-fill" style="background:var(--fb-d2);opacity:.6" data-w="18.7"></div></div>
           <div style="font-size:11px;color:var(--muted);margin-top:4px;">Buried in 17-link email — clicks are low despite high completion</div>
         </div>
-
         <div class="fb-fstage" style="background:rgba(21,128,61,.12);border-left:3px solid var(--fb-win);">
-          <div class="fb-fb-fstage-label"><span style="color:var(--fb-win);font-weight:700;">✓ Completed without email click</span><span class="fb-win-badge">+16</span></div>
+          <div class="fb-fstage-label"><span style="color:var(--fb-win);font-weight:700;">✓ Completed without email click</span><span class="fb-win-badge">+16</span></div>
           <div style="font-size:11px;color:var(--fb-win);font-weight:600;">These 16 people got the survey another way</div>
           <div style="font-size:11px;color:var(--muted);margin-top:2px;">QR code at event · direct link share · Slack · verbally given URL</div>
         </div>
-
-        <div class="fb-fb-fstage fb-terminal">
-          <div class="fb-fb-fstage-label"><span>Completed survey</span><span class="fb-fb-fstage-pct" style="color:var(--fb-win)">40.0%</span></div>
-          <div class="fb-fb-fstage-n" style="color:var(--fb-win)">30</div>
-          <div class="fb-fbar"><div class="fb-fb-fbar-fill" style="background:var(--fb-win)" data-w="40.0"></div></div>
+        <div class="fb-fstage fb-terminal">
+          <div class="fb-fstage-label"><span>Completed survey</span><span class="fb-fstage-pct" style="color:var(--fb-win)">40.0%</span></div>
+          <div class="fb-fstage-n" style="color:var(--fb-win)">30</div>
+          <div class="fb-fbar"><div class="fb-fbar-fill" style="background:var(--fb-win)" data-w="40.0"></div></div>
           <div style="font-size:11px;color:var(--muted);margin-top:6px;">2.7× Day 1's response rate · driven by in-room distribution</div>
         </div>
-
         <div class="fb-fstage" style="background:rgba(124,58,237,.04);">
           <div style="font-family:'Syne Mono',monospace;font-size:10px;color:var(--fb-d2);letter-spacing:1px;margin-bottom:4px;">WHY D2 IS HIGHER</div>
           <div style="font-size:12px;color:var(--muted);line-height:1.6;">Smaller room → more personal pressure to respond. Shorter event → survey feels manageable. On-site distribution (QR/direct) → captures motivation at peak. Leaders have more ownership over feedback culture.</div>
@@ -2862,19 +2840,19 @@ main{padding:52px 64px 0;}
   <div class="sec">
     <div class="sec-label">What this tells us</div>
     <div class="fb-insight-row">
-      <div class="fb-fb-insight-card fb-dark">
+      <div class="fb-insight-card fb-dark">
         <div class="fb-ic-tag">The real finding</div>
         <div class="fb-ic-n">16</div>
         <div class="fb-ic-title">Day 2's best completions came from a non-email path</div>
         <div class="fb-ic-body">14 people clicked the email survey link. 30 people completed it. That means 16 — more than half — found the form another way. Whatever you did on Day 2 to share the link in the room is working better than the email. Do more of that for Day 1.</div>
       </div>
-      <div class="fb-fb-insight-card fb-loss">
+      <div class="fb-insight-card fb-loss">
         <div class="fb-ic-tag">Day 1 problem</div>
         <div class="fb-ic-n">30%</div>
         <div class="fb-ic-title">Of Day 1 survey starters quit before finishing</div>
         <div class="fb-ic-body">29 people were motivated enough to open the email AND click the survey link — and then gave up. These are your most engaged potential respondents. A survey you can finish in under 3 minutes would have recovered most of them. That's the difference between 68 and ~95 completions.</div>
       </div>
-      <div class="fb-fb-insight-card fb-warn">
+      <div class="fb-insight-card fb-warn">
         <div class="fb-ic-tag">Day 2 problem</div>
         <div class="fb-ic-n">13</div>
         <div class="fb-ic-title">Of 17 links in the Day 2 email got zero clicks</div>
@@ -2887,10 +2865,9 @@ main{padding:52px 64px 0;}
   <div class="sec">
     <div class="sec-label">Email link audit — where clicks went (and didn't)</div>
     <div class="fb-link-grid">
-
-      <div class="fb-fb-link-col fb-d1">
+      <div class="fb-link-col fb-d1">
         <div class="fb-link-head">Day 1 post-event email <span class="fb-link-count">5 links · 3 got clicks</span></div>
-        <div class="fb-fb-link-item fb-active">
+        <div class="fb-link-item fb-active">
           <div>
             <div class="fb-link-name">📋 Feedback Survey</div>
             <div class="fb-link-url">docs.google.com/forms/d/e/1FAIpQLSce…</div>
@@ -2900,7 +2877,7 @@ main{padding:52px 64px 0;}
             <div style="font-family:'Syne Mono',monospace;font-size:10px;color:var(--muted)">unique</div>
           </div>
         </div>
-        <div class="fb-fb-link-item fb-active">
+        <div class="fb-link-item fb-active">
           <div>
             <div class="fb-link-name">📅 PlusPlus Event Page</div>
             <div class="fb-link-url">netflix.plusplus.app/event-types/363fec7b…</div>
@@ -2910,7 +2887,7 @@ main{padding:52px 64px 0;}
             <div style="font-family:'Syne Mono',monospace;font-size:10px;color:var(--muted)">unique</div>
           </div>
         </div>
-        <div class="fb-fb-link-item fb-active">
+        <div class="fb-link-item fb-active">
           <div>
             <div class="fb-link-name">📖 Pitch to Play Course</div>
             <div class="fb-link-url">learn.netflix.net/learn/course/1583/pitch…</div>
@@ -2920,14 +2897,14 @@ main{padding:52px 64px 0;}
             <div style="font-family:'Syne Mono',monospace;font-size:10px;color:var(--muted)">unique</div>
           </div>
         </div>
-        <div class="fb-fb-link-item fb-zero">
+        <div class="fb-link-item fb-zero">
           <div>
             <div class="fb-link-name">Google Drive Resources</div>
             <div class="fb-link-url">sites.google.com/d/1HsycyORLFbGI…</div>
           </div>
           <div class="fb-link-clicks">0</div>
         </div>
-        <div class="fb-fb-link-item fb-zero">
+        <div class="fb-link-item fb-zero">
           <div>
             <div class="fb-link-name">Netflix.com</div>
             <div class="fb-link-url">netflix.com</div>
@@ -2935,10 +2912,9 @@ main{padding:52px 64px 0;}
           <div class="fb-link-clicks">0</div>
         </div>
       </div>
-
-      <div class="fb-fb-link-col fb-d2">
+      <div class="fb-link-col fb-d2">
         <div class="fb-link-head" style="background:rgba(167,139,250,.1);color:var(--fb-d2);">Day 2 post-event email <span class="fb-link-count">17 links · 4 got clicks · 13 got zero</span></div>
-        <div class="fb-fb-link-item fb-active fb-d2c">
+        <div class="fb-link-item fb-active fb-d2c">
           <div>
             <div class="fb-link-name">📋 Feedback Survey</div>
             <div class="fb-link-url">forms.gle/BXcKgagirzCdTiad9</div>
@@ -2948,7 +2924,7 @@ main{padding:52px 64px 0;}
             <div style="font-family:'Syne Mono',monospace;font-size:10px;color:var(--muted)">unique</div>
           </div>
         </div>
-        <div class="fb-fb-link-item fb-active fb-d2c">
+        <div class="fb-link-item fb-active fb-d2c">
           <div>
             <div class="fb-link-name">📖 Leadership Excellence</div>
             <div class="fb-link-url">learn.netflix.net/pages/210/leadership-exc…</div>
@@ -2958,7 +2934,7 @@ main{padding:52px 64px 0;}
             <div style="font-family:'Syne Mono',monospace;font-size:10px;color:var(--muted)">unique</div>
           </div>
         </div>
-        <div class="fb-fb-link-item fb-active fb-d2c">
+        <div class="fb-link-item fb-active fb-d2c">
           <div>
             <div class="fb-link-name">📅 PlusPlus Event</div>
             <div class="fb-link-url">netflix.plusplus.app/event-types/363fec7b…</div>
@@ -2968,7 +2944,7 @@ main{padding:52px 64px 0;}
             <div style="font-family:'Syne Mono',monospace;font-size:10px;color:var(--muted)">unique</div>
           </div>
         </div>
-        <div class="fb-fb-link-item fb-active fb-d2c">
+        <div class="fb-link-item fb-active fb-d2c">
           <div>
             <div class="fb-link-name">📖 Team Effectiveness</div>
             <div class="fb-link-url">learn.netflix.net/pages/217/team-effective…</div>
@@ -2978,7 +2954,7 @@ main{padding:52px 64px 0;}
             <div style="font-family:'Syne Mono',monospace;font-size:10px;color:var(--muted)">unique</div>
           </div>
         </div>
-        <div class="fb-fb-link-item fb-active fb-d2c">
+        <div class="fb-link-item fb-active fb-d2c">
           <div>
             <div class="fb-link-name">▶ YouTube (session recording?)</div>
             <div class="fb-link-url">youtube.com/watch?v=cYMcvYPMzqk</div>
@@ -2988,7 +2964,7 @@ main{padding:52px 64px 0;}
             <div style="font-family:'Syne Mono',monospace;font-size:10px;color:var(--muted)">unique</div>
           </div>
         </div>
-        <div class="fb-fb-link-item fb-zero" style="background:rgba(220,38,38,.02)">
+        <div class="fb-link-item fb-zero" style="background:rgba(220,38,38,.02)">
           <div style="flex:1">
             <div class="fb-link-name" style="color:var(--fb-loss)">+ 12 more links</div>
             <div class="fb-link-url">Sites, Docs, Learn pages, Netflix.com, jobs/culture — all 0 clicks</div>
@@ -3016,11 +2992,10 @@ main{padding:52px 64px 0;}
       <div class="fb-reco-item">
         <div class="fb-reco-n">03 · Email</div>
         <div class="fb-reco-title">Cut Day 2 email to <em>3 links max</em></div>
-        <div class="fb-reco-body">Day 2's email had 17 links. 13 got zero clicks. That's not a resource library — it's noise that buries your most important CTA (the survey). For Q2: survey link, one curated Learn resource, and PlusPlus. Everything else belongs in a separate "resource digest" email sent a week later to anyone who clicks "want more."</div>
+        <div class="fb-reco-body">Day 2's email had 17 links. 13 got zero clicks. That's not a resource library — it's noise that buries your most important CTA (the survey). For Q2: survey link, one curated Learn resource, and PlusPlus. Everything else belongs in a separate "resource digest" email sent a week later.</div>
       </div>
     </div>
   </div>
-
 
   </div>
 </div>
